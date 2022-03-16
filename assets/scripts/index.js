@@ -43,12 +43,19 @@ const usernameVal = username.value.trim();
     if(cnt===wrapper.length){
         // console.log("success");
         alert("Registration Successfull");
-        swal("Good job! "+ usernameVal +" , " , "You're registered successfully!", "success");
+        swal("Good job! "+ usernameVal +" , " , "You're registered successfully!", "success").then(
+            function(){
+                location.href=`hello.html?username=${usernameVal}`
+            }
+        );
         // swal("Good job!", "You clicked the button!", "success");
         // swal("Here's the title!", "...and here's the text!");
 
 
-        location.href=`hello.html?username=${usernameVal}`
+        // location.href=`hello.html?username=${usernameVal}`
+        // window.open(
+        //     `hello.html?username=${usernameVal}`
+        // )
     }
     
 }
