@@ -15,6 +15,44 @@ const cpassword = document.getElementById("cpassword");
 // }
 // )
 // //validate
+function finalMsg(){
+    let wrapper=Array.from(document.getElementsByClassName("wrapper"));
+    // console.log(wrapper);
+    let cnt=0;
+const usernameVal = username.value.trim();
+
+    
+    wrapper.forEach(function(f){
+        // words=JSON.stringify(e);
+        // console.log(words);
+        // console.log(JSON.stringify(f.classList));
+        
+        q=f.className.trim();
+        if(q== "wrapper success"){
+        // console.log("hello");
+        cnt++;
+        }
+        else{
+            // console.log("heloo");
+            return false;
+        }
+        
+    })
+    // console.log(wrapper.length);
+
+    if(cnt===wrapper.length){
+        // console.log("success");
+        alert("Registration Successfull");
+        swal("Good job! "+ usernameVal +" , " , "You're registered successfully!", "success");
+        // swal("Good job!", "You clicked the button!", "success");
+        // swal("Here's the title!", "...and here's the text!");
+
+
+        location.href=`hello.html?username=${usernameVal}`
+    }
+    
+}
+
 const validate=()=>{
     
     const usernameVal = username.value.trim();
@@ -87,6 +125,7 @@ const validate=()=>{
     else{
     setSuccessMsg(cpassword);
     }
+    finalMsg();
 }
 function setErrorMsg(input, errormsgs){
     const formControl = input.parentElement;
